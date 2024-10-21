@@ -47,10 +47,15 @@ app.put('/todos/:id', (req, res) => {
             id: todoIndex,
             ...newTodoData
         }
+        
+        res.json({
+            message: 'Todo Completed Successfully!'
+        })
+    } else {
+        res.status(400).json({
+            message: 'Todo ID does not exist'
+        })
     }
-    res.json({
-        message: 'Todo Completed Successfully!'
-    })
 })
 
 // DELETE
