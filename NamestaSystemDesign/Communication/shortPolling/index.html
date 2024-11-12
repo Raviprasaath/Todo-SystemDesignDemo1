@@ -8,5 +8,28 @@
 <body>
     <h1>Short Polling Example</h1>
     <div id="data-container"></div>
+    <script>
+        async function getData() {
+            try {
+                const response = await fetch('/getData');
+                const result = await response.json();
+                document.getElementById('data-container').innerHTML = result.data
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        let intervalId;
+        function shortPolling () {
+            intervalId = (()=> {
+                getData();
+            }, 5000)
+        }
+
+        shortPolling();
+        
+        // Navigation or user action or target condition
+        clearInterval(intervalId);
+    </script>
 </body>
 </html>

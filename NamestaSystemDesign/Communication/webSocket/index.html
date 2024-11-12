@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Socket</title>
+    <style>
+        .mainBox {
+            width: 100%;
+            height: 90dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: rgb(171, 171, 171);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+        }
+
+        .btn:hover {
+            background-color: rgb(142, 141, 141);
+        }
+
+        #form {
+            border: 1px solid gray;
+            padding: 5px 20px;
+        }
+
+        #input {
+            border: none;
+            border-bottom: 1px solid gray;
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="mainBox">
+        <ul id="messages"></ul>
+        <form id="form">
+            <input type="text" id="input" />
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </section>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = window.io();
+        const form = document.getElementById('form');
+        const input = document.getElementById('input');
+        const messages = document.getElementById('messages');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (input.value) {
+                console.log(input.value);
+                socket.emit('chat message', input.value);
+                input.value = '';
+            }
+        })
+
+        socket.on('chat message', (msg) => {
+            const item = document.createElement('li');
+            item.textContent = msg;
+            messages.appendChild(item)
+        })
+    </script>
+</body>
+
+</html>
