@@ -12,6 +12,22 @@
 
     <button id="overlay-button">Click Me!</button>
 
+    <iframe src="http://localhost:5001/iframe-website1" id="legit-iframe" frameborder="0"></iframe>
+
+    <style>
+        #legit-iframe {
+            background-color: #ccc;
+            opacity: 0;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+
+
     <script>
         // Simulate clickjacking attack by overlaying
         document.getElementById('overlay-button').addEventListener('click', ()=> {
