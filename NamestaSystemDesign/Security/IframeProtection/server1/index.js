@@ -14,6 +14,10 @@ app.get('/example2', (req, res) => {
     res.sendFile(__dirname + '/public/example2.html');
 });
 
+app.get('/example3', (req, res) => {
+    res.sendFile(__dirname + '/public/example3.html');
+});
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, ()=>{

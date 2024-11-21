@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 
+// app.use((req, res, next) => {
+//     res.setHeader('Content-Security-Policy', "frame-ancestors 'none' " )
+//     next();
+// })
+
 // Serve static files (optional)
 app.use(express.static('public'));
 
@@ -16,5 +21,5 @@ app.get('/iframe-website2', (req, res) => {
 const port = process.env.PORT || 5001;
 
 app.listen(port, () => {
-    console.log(`Server running on the port ${port}`);
+    console.log(`Server 2 running on the port ${port}`);
 })
