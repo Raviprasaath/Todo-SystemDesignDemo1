@@ -1,10 +1,16 @@
 const express = require('express');
 const app = express();
 
-// app.use((req, res, next) => {
-//     res.setHeader('Content-Security-Policy', "frame-ancestors 'none' " )
-//     next();
-// })
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "frame-ancestors 'none' " )
+
+    res.cookie('sessionID', '12345', {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'strict'
+    })
+    next();
+})
 
 // Serve static files (optional)
 app.use(express.static('public'));
