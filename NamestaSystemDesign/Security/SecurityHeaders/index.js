@@ -1,8 +1,17 @@
 const express = require('express');
 const app = express();
 
-const PORT = 5010;
+const redirectToHttps = (req, res, next) => {
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+        // Redirect to https
+        return res.redirect(['https://', req.get('Host'), req.url].join(''));
+    }
+    next();
+}
 
+app.use(redirectToHttps);
+
+const PORT = 5010;
 app.use((req, res, next) => {
     res.setHeader('Referrer-Policy', 'origin');
     res.removeHeader('X-Powered-By');
