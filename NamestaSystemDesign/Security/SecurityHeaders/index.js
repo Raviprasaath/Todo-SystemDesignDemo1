@@ -12,6 +12,8 @@ const redirectToHttps = (req, res, next) => {
 app.use(redirectToHttps);
 
 const PORT = 5010;
+
+// header control for security
 app.use((req, res, next) => {
     res.setHeader('Referrer-Policy', 'origin');
     res.removeHeader('X-Powered-By');
