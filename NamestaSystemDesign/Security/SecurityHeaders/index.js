@@ -11,7 +11,7 @@ const redirectToHttps = (req, res, next) => {
 
 app.use(redirectToHttps);
 
-const PORT = 5010;
+const PORT = 5000;
 
 // header control for security
 app.use((req, res, next) => {
