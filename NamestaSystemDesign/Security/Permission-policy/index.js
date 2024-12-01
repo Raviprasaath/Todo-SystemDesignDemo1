@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.use((req, res, next)=> {
-    res.setHeader('Permission-Policy', 'geolocation=()')
+    res.setHeader('Permissions-Policy', 'geolocation=()')
     next();
 })
 
