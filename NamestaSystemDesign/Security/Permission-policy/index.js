@@ -6,6 +6,7 @@ app.use((req, res, next)=> {
     next();
 })
 
+
 app.get('/page', (req, res) => {
     res.send(`
     <!DOCTYPE html>
