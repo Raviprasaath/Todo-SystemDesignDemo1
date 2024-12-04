@@ -8,5 +8,21 @@
 <body>
     <h1>Fetch example</h1>
     <button onclick="fetchData()">Fetch Data</button>
+    <div id="result"></div>
+
+    <script>
+        function fetchData() {
+            fetch ('URL', {
+                method: 'GET',
+            })
+            .then(data => {
+                // display the fetched data
+                document.getElementById('result').innerText = JSON.stringify
+            })
+            .catch(error => {
+                console.log('Error:', error);
+            })
+        }
+    </script>
 </body>
 </html>
