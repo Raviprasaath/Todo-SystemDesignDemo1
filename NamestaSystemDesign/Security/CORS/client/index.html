@@ -14,7 +14,8 @@
 
     <script>
         function fetchData() {
-            fetch('https://www.google.com/complete/search?q=tamilnadu&cp=0&client=desktop-gws-wiz-on-focus-serp&xssi=t&gs_pcrt=3&hl=en-IN&authuser=0&pq=tamilnadu&psi=COBPZ5LQAubd2roPgcCR6Q0.1733287946154&dpr=1.25&ofp=EAEyzgEKDwoNdGFtaWwgbmFkdSBjbQoVChN0YW1pbCBuYWR1IGxhbmd1YWdlCg8KDXRhbWlsbmFkdSBtYXAKJAoidGFtaWwgbmFkdSBnb3Zlcm5tZW50IHdlYnNpdGUgbGlzdAoUChJ0bi5nb3YuaW4gaW4gdGFtaWwKHAoaMTAgcG9pbnRzIGFib3V0IHRhbWlsIG5hZHUKFAoSd3d3LnRuLmdvdi5pbiAyMDI0CiEKH3RhbWlsIG5hZHUgcG9wdWxhdGlvbiBpbiBjcm9yZXMQRzJ4Ch8KHVdoeSBpcyBUYW1pbCBOYWR1IGZhbW91cyBmb3I_Ch4KHFdoYXQgaXMgVGFtaWwgTmFkdSBvbGQgbmFtZT8KMgowV2hpY2ggaXMgdGhlIGxhcmdlc3QgY2l0eSBpbiBUYW1pbCBOYWR1IGJ5IGFyZWE_EOQC', {
+            // fetch('https://www.google.com/complete/search?q=tamilnadu&cp=0&client=desktop-gws-wiz-on-focus-serp&xssi=t&gs_pcrt=3&hl=en-IN&authuser=0&pq=tamilnadu&psi=COBPZ5LQAubd2roPgcCR6Q0.1733287946154&dpr=1.25&ofp=EAEyzgEKDwoNdGFtaWwgbmFkdSBjbQoVChN0YW1pbCBuYWR1IGxhbmd1YWdlCg8KDXRhbWlsbmFkdSBtYXAKJAoidGFtaWwgbmFkdSBnb3Zlcm5tZW50IHdlYnNpdGUgbGlzdAoUChJ0bi5nb3YuaW4gaW4gdGFtaWwKHAoaMTAgcG9pbnRzIGFib3V0IHRhbWlsIG5hZHUKFAoSd3d3LnRuLmdvdi5pbiAyMDI0CiEKH3RhbWlsIG5hZHUgcG9wdWxhdGlvbiBpbiBjcm9yZXMQRzJ4Ch8KHVdoeSBpcyBUYW1pbCBOYWR1IGZhbW91cyBmb3I_Ch4KHFdoYXQgaXMgVGFtaWwgTmFkdSBvbGQgbmFtZT8KMgowV2hpY2ggaXMgdGhlIGxhcmdlc3QgY2l0eSBpbiBUYW1pbCBOYWR1IGJ5IGFyZWE_EOQC', {
+            fetch('http://localhost:5001/list', {
                 method: 'GET',
             })
                 .then(data => {
