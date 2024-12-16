@@ -4,3 +4,7 @@ const puppeteer = require('puppeteer');
 (()=>{
 
 })();
+
+(function(){
+
+}())
