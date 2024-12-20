@@ -30,7 +30,7 @@ test("// 121 -> true", () => {
   const result = isPalindrome(121);
   expect(result).toBe(true);
 });
-test("// -121 -> ignore negaitve sign", () => {
+test("// -121 -> ignore negative sign", () => {
   const result = isPalindrome(-121);
   expect(result).toBe(true);
 });
