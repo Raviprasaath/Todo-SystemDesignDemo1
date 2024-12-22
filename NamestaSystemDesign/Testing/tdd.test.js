@@ -1,5 +1,5 @@
 // Palindrome Check
-// isPalindrome()
+// isPalindrome() function call
 const isPalindrome = require("./tdd");
 
 test("// abc -> false", () => {
