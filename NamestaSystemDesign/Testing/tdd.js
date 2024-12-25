@@ -12,10 +12,10 @@ const isPalindrome = (x) => {
     if (x.length === 1) return true;
 
     x = x.toLowerCase().trim();
-    
+
     const reverse = x.split("").reverse().join("");
-    
-    return x === reverse;   
+
+    return x === reverse;
 };
 
 module.exports = isPalindrome;
